@@ -1,12 +1,6 @@
 #include <string>
 #include <iostream>
 
-// Windows support only
-#ifndef SDL_H
-#define SDL_H
-#include "SDL.h"
-#endif
-
 #include "Game.h"
 using namespace std;
 
@@ -28,5 +22,6 @@ int main(int argc, char** argv)
         g->HandleEvents();
     }
 
+    delete g;
     return 0;
 }

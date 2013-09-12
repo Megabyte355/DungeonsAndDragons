@@ -1,5 +1,23 @@
-﻿Build started 9/9/2013 7:57:41 PM.
+﻿Build started 9/11/2013 6:00:50 PM.
+     1>Project "C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\DungeonsAndDragons\DungeonsAndDragons.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp Main.cpp Screen.cpp ScreenManager.cpp Textures.cpp
+         Game.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         Textures.cpp
+         ScreenManager.cpp
+         Screen.cpp
+         Main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\Debug\DungeonsAndDragons.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\\SDL2-2.0.0\lib\x86" SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\Debug\DungeonsAndDragons.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\Debug\DungeonsAndDragons.lib" /MACHINE:X86 Debug\Game.obj
+         Debug\Main.obj
+         Debug\Screen.obj
+         Debug\ScreenManager.obj
+         Debug\Textures.obj
+         DungeonsAndDragons.vcxproj -> C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\Debug\DungeonsAndDragons.exe
+     1>Done Building Project "C:\Users\Gary\documents\visual studio 2012\Projects\DungeonsAndDragons\DungeonsAndDragons\DungeonsAndDragons.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.02
+Time Elapsed 00:00:01.60
