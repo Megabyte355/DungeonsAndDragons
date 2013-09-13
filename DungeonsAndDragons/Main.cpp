@@ -1,6 +1,3 @@
-#include <string>
-#include <iostream>
-
 #include "Game.h"
 using namespace std;
 
@@ -15,11 +12,16 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    SDL_Event event;
+
     while (g->isRunning)
     {
         g->Update();
         g->Draw();
-        g->HandleEvents();
+        while(SDL_PollEvent(&event))
+        {
+            g->HandleEvents(event);
+        }
     }
 
     delete g;

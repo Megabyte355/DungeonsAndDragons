@@ -3,23 +3,34 @@
 #include <string>
 #include "Screen.h"
 
+#include "TitleScreen.h"
+#include <SDL.h>
 
 class ScreenManager
 {
 public:
-    ScreenManager(void);
+    static ScreenManager * GetInstance();
     ~ScreenManager(void);
 
     void Initialize();
     void PushScreen(Screen * s);
-    void RemoveScreen(Screen * s);
-    void RemoveScreen(std::string s);
+    void PushScreen(std::string s);
+    void PopScreen(Screen * s);
+    void PopScreen(std::string s);
 
-    void UpdateScreen();
-    void DrawScreen();
-    void HandleScreenEvents();
+    void Update();
+    void Draw();
+    void HandleEvents(SDL_Event event);
 
 private:
-    std::vector<Screen> screens;
+    ScreenManager(void);
+    
+    static ScreenManager* screenManagerInstance;
+    std::vector<Screen*> storedScreens;
+    std::vector<Screen*> activeScreens;
+    std::vector<Screen*> screensToProcess;
+    
+    void CopyActiveScreens();
+    void CleanCopiedScreens();
 };
 
