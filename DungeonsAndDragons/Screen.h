@@ -2,7 +2,10 @@
 #include <string>
 #include <SDL.h>
 
+class Game;
+
 using namespace std;
+
 class Screen
 {
 private:
@@ -16,6 +19,6 @@ public:
     virtual void Initialize() = 0;
     virtual void Update() = 0;
     virtual void Draw() = 0;
-    virtual void HandleEvents(SDL_Event event) = 0;
+    virtual void HandleEvents(Game * game, SDL_Event * event) = 0;
 
 };

@@ -48,6 +48,7 @@ void Game::Initialize()
 	}
     
     Textures::SetRenderer(renderer);
+    Textures::LoadAllTextures();
     screenManager = ScreenManager::GetInstance();
     screenManager->Initialize();
 
@@ -65,10 +66,12 @@ void Game::Update()
 
 void Game::Draw()
 {
+    SDL_RenderClear(renderer);
     screenManager->Draw();
+    SDL_RenderPresent(renderer);
 }
 
-void Game::HandleEvents(SDL_Event event)
+void Game::HandleEvents(Game * game, SDL_Event * event)
 {
-    screenManager->HandleEvents(event);
+    screenManager->HandleEvents(game, event);
 }

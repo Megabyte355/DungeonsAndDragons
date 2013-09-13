@@ -6,6 +6,8 @@
 #include "TitleScreen.h"
 #include <SDL.h>
 
+class Game;
+
 class ScreenManager
 {
 public:
@@ -20,7 +22,7 @@ public:
 
     void Update();
     void Draw();
-    void HandleEvents(SDL_Event event);
+    void HandleEvents(Game * game, SDL_Event * event);
 
 private:
     ScreenManager(void);

@@ -13,6 +13,6 @@ public:
     void Initialize() override;
     void Update() override;
     void Draw() override;
-    void HandleEvents(SDL_Event event) override;
+    void HandleEvents(Game * game, SDL_Event * event) override;
 };
 

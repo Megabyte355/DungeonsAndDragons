@@ -1,4 +1,6 @@
+#ifndef GAME_H
 #include "Game.h"
+#endif
 using namespace std;
 
 int main(int argc, char** argv)
@@ -20,7 +22,7 @@ int main(int argc, char** argv)
         g->Draw();
         while(SDL_PollEvent(&event))
         {
-            g->HandleEvents(event);
+            g->HandleEvents(g, &event);
         }
     }
 

@@ -97,14 +97,14 @@ void ScreenManager::Draw()
     CleanCopiedScreens();
 }
 
-void ScreenManager::HandleEvents(SDL_Event event)
+void ScreenManager::HandleEvents(Game * game, SDL_Event * event)
 {
     // For each screen in active screens, perform HandleEvents()
     CopyActiveScreens();
 
     for (vector<Screen*>::iterator it = screensToProcess.begin(); it != screensToProcess.end(); it++)
     {
-        (*it)->HandleEvents(event);
+        (*it)->HandleEvents(game, event);
     }
 
     CleanCopiedScreens();

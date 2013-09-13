@@ -2,6 +2,9 @@
 
 SDL_Renderer * Textures::renderer;
 
+// Texture test
+SDL_Texture * Textures::orange;
+
 Textures::Textures(void)
 {
 }
@@ -17,11 +20,12 @@ void Textures::SetRenderer(SDL_Renderer * ren)
 void Textures::LoadAllTextures()
 {
     // Load all files here
+    orange = LoadTexture("Assets\\orange.png");
 }
 
-SDL_Texture* Textures::LoadTexture(const std::string &file, SDL_Renderer *ren)
+SDL_Texture* Textures::LoadTexture(const std::string &file)
 {
-    SDL_Texture *texture = IMG_LoadTexture(ren, file.c_str());
+    SDL_Texture *texture = IMG_LoadTexture(renderer, file.c_str());
 	if (texture == nullptr)		
 		Utils::logSDLError(std::cout, "LoadTexture");
 	return texture;
@@ -49,17 +53,23 @@ SDL_Texture* Textures::RenderText(std::string message, std::string fontFile, SDL
 	return nullptr;
 }
 
-void Textures::ApplySurface(int x, int y, SDL_Texture *tex)
+void Textures::ApplySurface(SDL_Texture *tex, int x, int y, int w, int h)
 {
     if (renderer != nullptr)
     {
-        //First we must create an SDL_Rect for the position of the image, as SDL
-	    //won't accept raw coordinates as the image's position
 	    SDL_Rect pos;
 	    pos.x = x;
 	    pos.y = y;
-	    //We also need to query the texture to get its width and height to use
-	    SDL_QueryTexture(tex, NULL, NULL, &pos.w, &pos.h);
+	    
+        if (w == 0 || h == 0)
+        {
+            SDL_QueryTexture(tex, NULL, NULL, &pos.w, &pos.h);
+        }
+        else
+        {
+            pos.w = w;
+            pos.h = h;
+        }
 	    SDL_RenderCopy(renderer, tex, NULL, &pos);
     }
 }
