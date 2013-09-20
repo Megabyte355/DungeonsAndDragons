@@ -3,7 +3,9 @@
 SDL_Renderer * Textures::renderer;
 
 // Texture test
+std::map<std::string, SDL_Texture*> Textures::textureMap;
 SDL_Texture * Textures::orange;
+
 
 Textures::Textures(void)
 {
@@ -11,6 +13,7 @@ Textures::Textures(void)
 
 Textures::~Textures(void)
 {
+    // TO DO: Free all textures in textureMap
 }
 
 void Textures::SetRenderer(SDL_Renderer * ren)
@@ -21,6 +24,12 @@ void Textures::LoadAllTextures()
 {
     // Load all files here
     orange = LoadTexture("Assets\\orange.png");
+    textureMap["orange"] = orange;
+}
+
+SDL_Texture* Textures::GetTexture(std::string textureName)
+{
+    return textureMap[textureName];
 }
 
 SDL_Texture* Textures::LoadTexture(const std::string &file)
@@ -53,9 +62,10 @@ SDL_Texture* Textures::RenderText(std::string message, std::string fontFile, SDL
 	return nullptr;
 }
 
-void Textures::ApplySurface(SDL_Texture *tex, int x, int y, int w, int h)
+void Textures::DrawTexture(std::string textureName, int x, int y, int w, int h)
 {
-    if (renderer != nullptr)
+    SDL_Texture * tex = textureMap[textureName];
+    if (renderer != nullptr && tex != nullptr)
     {
 	    SDL_Rect pos;
 	    pos.x = x;
@@ -72,4 +82,29 @@ void Textures::ApplySurface(SDL_Texture *tex, int x, int y, int w, int h)
         }
 	    SDL_RenderCopy(renderer, tex, NULL, &pos);
     }
+    else
+    {
+        Utils::logSDLError(std::cout, std::string("DrawTexture \"").append(textureName).append("\""));
+    }
 }
+
+//void Textures::ApplySurface(SDL_Texture *tex, int x, int y, int w, int h)
+//{
+//    if (renderer != nullptr)
+//    {
+//	    SDL_Rect pos;
+//	    pos.x = x;
+//	    pos.y = y;
+//	    
+//        if (w == 0 || h == 0)
+//        {
+//            SDL_QueryTexture(tex, NULL, NULL, &pos.w, &pos.h);
+//        }
+//        else
+//        {
+//            pos.w = w;
+//            pos.h = h;
+//        }
+//	    SDL_RenderCopy(renderer, tex, NULL, &pos);
+//    }
+//}

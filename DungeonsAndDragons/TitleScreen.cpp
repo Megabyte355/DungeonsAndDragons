@@ -27,7 +27,12 @@ void TitleScreen::Update()
 
 void TitleScreen::Draw() 
 {
-    Textures::ApplySurface(Textures::orange, 50, 50);
+    //Textures::ApplySurface(Textures::GetTexture("orange"), 50, 50);
+
+    // Testing
+    Textures::DrawTexture("orange", 150, 150);
+    Textures::DrawTexture("orange", 250, 250, 350, 350);
+    Textures::DrawTexture("orange", 400, 375, 200, 200);
 }
 
 void TitleScreen::HandleEvents(Game * game, SDL_Event * event) 
