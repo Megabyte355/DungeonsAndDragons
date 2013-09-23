@@ -2,13 +2,11 @@
 
 Game::Game(void)
 {
-    // ---Temporary---
-    isRunning = false;
-    // ---------------
 
+    screenManager = nullptr;
     renderer = nullptr;
     window = nullptr;
-
+    
     Initialize();
 }
 
@@ -16,6 +14,7 @@ Game::Game(void)
 Game::~Game(void)
 {
     isRunning = false;
+    delete screenManager;
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 
@@ -28,7 +27,7 @@ void Game::Initialize()
 {
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
     {
-		std::cout << SDL_GetError() << std::endl;
+		Utils::logSDLError(std::cout, "SDL_Init");
 		return;
 	}
 	if (TTF_Init() == -1)
@@ -37,31 +36,42 @@ void Game::Initialize()
 		return;
 	}
 
-	window = SDL_CreateWindow("Lesson 6", SDL_WINDOWPOS_CENTERED, 
-		SDL_WINDOWPOS_CENTERED, GameConfig::SCREEN_WIDTH, GameConfig::SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("Lesson 6", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, GameConfig::SCREEN_WIDTH, GameConfig::SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 	if (window == nullptr){
-		std::cout << SDL_GetError() << std::endl;
+		Utils::logSDLError(std::cout, "SDL_CreateWindow");
 		return;
 	}
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED 
-		| SDL_RENDERER_PRESENTVSYNC);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (renderer == nullptr){
-		std::cout << SDL_GetError() << std::endl;
+        Utils::logSDLError(std::cout, "SDL_CreateRenderer");
 		return;
 	}
+    
+    Textures::SetRenderer(renderer);
+    Textures::LoadAllTextures();
+    screenManager = ScreenManager::GetInstance();
+    screenManager->Initialize();
 
-    // SDL_Delay(5000);
+    
+    //SDL_Delay(5000);
+    isRunning = true;
+
     std::cout << "Game Started" << std::endl;
 }
 
 void Game::Update()
 {
+    screenManager->Update();
 }
 
 void Game::Draw()
 {
+    SDL_RenderClear(renderer);
+    screenManager->Draw();
+    SDL_RenderPresent(renderer);
 }
 
-void Game::HandleEvents()
+void Game::HandleEvents(Game * game, SDL_Event * event)
 {
+    screenManager->HandleEvents(game, event);
 }

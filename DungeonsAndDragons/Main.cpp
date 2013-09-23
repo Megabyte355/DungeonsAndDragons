@@ -1,7 +1,6 @@
-#include <string>
-#include <iostream>
-
+#ifndef GAME_H
 #include "Game.h"
+#endif
 using namespace std;
 
 int main(int argc, char** argv)
@@ -15,11 +14,16 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    SDL_Event event;
+
     while (g->isRunning)
     {
         g->Update();
         g->Draw();
-        g->HandleEvents();
+        while(SDL_PollEvent(&event))
+        {
+            g->HandleEvents(g, &event);
+        }
     }
 
     delete g;
