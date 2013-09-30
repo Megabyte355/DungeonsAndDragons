@@ -2,9 +2,12 @@
 
 #include "Screen.h"
 #include <iostream>
-
+#include "Orange.h"
 class TitleScreen : public Screen
 {
+private:
+    Orange o;
+
 public:
     TitleScreen(void);
     ~TitleScreen(void);

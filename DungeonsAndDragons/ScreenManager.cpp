@@ -8,11 +8,11 @@ ScreenManager::ScreenManager(void)
 
 ScreenManager::~ScreenManager(void)
 {
-    for (vector<Screen*>::iterator it = storedScreens.begin(); it != storedScreens.end(); it++)
+    while (!storedScreens.empty())
     {
-        delete *it;
+        delete storedScreens.back();
+        storedScreens.pop_back();
     }
-    storedScreens.clear();
     activeScreens.clear();
     screensToProcess.clear();
 }
@@ -74,26 +74,21 @@ void ScreenManager::Update()
 {
     // For each screen in active screens, perform Update()
     CopyActiveScreens();
-
-    for (vector<Screen*>::iterator it = screensToProcess.begin(); it != screensToProcess.end(); it++)
+    for (auto s : screensToProcess)
     {
-        (*it)->Update();
+        s->Update();
     }
-
     CleanCopiedScreens();
 }
 
 void ScreenManager::Draw()
 {
     // For each screen in active screens, perform Draw()
-
     CopyActiveScreens();
-
-    for (vector<Screen*>::iterator it = screensToProcess.begin(); it != screensToProcess.end(); it++)
+    for (auto s : screensToProcess)
     {
-        (*it)->Draw();
+        s->Draw();
     }
-
     CleanCopiedScreens();
 }
 
@@ -101,21 +96,19 @@ void ScreenManager::HandleEvents(Game * game, SDL_Event * event)
 {
     // For each screen in active screens, perform HandleEvents()
     CopyActiveScreens();
-
-    for (vector<Screen*>::iterator it = screensToProcess.begin(); it != screensToProcess.end(); it++)
+    for (auto s : screensToProcess)
     {
-        (*it)->HandleEvents(game, event);
+        s->HandleEvents(game, event);
     }
-
     CleanCopiedScreens();
 }
 
 // Copy all screens in activeScreens to screensToProcess vector
 void ScreenManager::CopyActiveScreens()
 {
-    for (vector<Screen*>::iterator it = activeScreens.begin(); it != activeScreens.end(); it++)
+    for (auto s : activeScreens)
     {
-        screensToProcess.push_back(*it);
+        screensToProcess.push_back(s);
     }
 }
 

@@ -19,6 +19,9 @@
     <Filter Include="Source Files\GameEngine\Screens">
       <UniqueIdentifier>{04022fc0-9ba8-4955-b652-95e76dcc4a52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObjects">
+      <UniqueIdentifier>{945dfc70-8459-4a8d-bbaa-389775d113b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -39,8 +42,11 @@
     <ClCompile Include="Screen.cpp">
       <Filter>Source Files\GameEngine\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="Orange.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
     <ClCompile Include="TitleScreen.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameEngine\Screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TitleScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Orange.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
