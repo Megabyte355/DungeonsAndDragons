@@ -61,6 +61,22 @@
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)SDL2-2.0.0\lib\x86\*.dll" "$(OutDir)"
+md "$(OutDir)Assets"
+copy /Y "$(ProjectDir)Assets\*.*" "$(OutDir)Assets\"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy SDL DLL files and Assets to the output directory</Message>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>rmdir /S /Q "$(OutDir)Assets"
+erase "$(OutDir)*.dll"
+</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Delete all Assets and DLL files from output directory</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -76,6 +92,12 @@
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)\SDL2-2.0.0\lib\x86\*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy SDL dll files to the output directory.</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />

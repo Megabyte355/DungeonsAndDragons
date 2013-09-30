@@ -10,9 +10,9 @@ private:
 
 public:
     TitleScreen(void);
-    ~TitleScreen(void);
+    ~TitleScreen(void) override;
 
-    void Instance() override;
+    void Instance();
     void Initialize() override;
     void Update() override;
     void Draw() override;

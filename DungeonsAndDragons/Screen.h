@@ -12,7 +12,7 @@ private:
     string uniqueName;
 public:
     Screen(string name);
-    ~Screen(void);
+    virtual ~Screen(void);
 
     virtual string GetName();
     virtual void Instance() = 0;
