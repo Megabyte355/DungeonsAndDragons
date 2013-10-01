@@ -105,6 +105,7 @@ erase "$(OutDir)*.dll"
     <ClCompile Include="Orange.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="ScreenManager.cpp" />
+    <ClCompile Include="TestScreen.cpp" />
     <ClCompile Include="Textures.cpp" />
     <ClCompile Include="TitleScreen.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -115,6 +116,7 @@ erase "$(OutDir)*.dll"
     <ClInclude Include="Orange.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="ScreenManager.h" />
+    <ClInclude Include="TestScreen.h" />
     <ClInclude Include="Textures.h" />
     <ClInclude Include="TitleScreen.h" />
     <ClInclude Include="Utils.h" />

@@ -28,9 +28,9 @@ ScreenManager * ScreenManager::GetInstance()
 
 void ScreenManager::Initialize()
 {
-    storedScreens.push_back(new TitleScreen());
+    storedScreens.push_back(new TestScreen());
 
-    PushScreen("TitleScreen");
+    PushScreen("TestScreen");
 }
 
 // Move a screen from storedScreen to activeScreens

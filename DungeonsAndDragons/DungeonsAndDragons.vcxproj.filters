@@ -16,63 +16,78 @@
     <Filter Include="Source Files\GameEngine">
       <UniqueIdentifier>{dc2edba6-c343-40f8-b0a4-b8934d559654}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GameEngine\Screens">
-      <UniqueIdentifier>{04022fc0-9ba8-4955-b652-95e76dcc4a52}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\GameObjects">
       <UniqueIdentifier>{945dfc70-8459-4a8d-bbaa-389775d113b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Screens">
+      <UniqueIdentifier>{04022fc0-9ba8-4955-b652-95e76dcc4a52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameEngine">
+      <UniqueIdentifier>{5b8a9451-d8fe-4501-8b73-41543cbd0929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects">
+      <UniqueIdentifier>{53b39630-bfcc-4a56-b491-a7d27a7a03f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Screens">
+      <UniqueIdentifier>{ca9c8769-fc20-4faa-bad5-87eb9587ce70}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Textures.cpp">
       <Filter>Source Files\GameEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ScreenManager.cpp">
       <Filter>Source Files\GameEngine</Filter>
     </ClCompile>
     <ClCompile Include="Screen.cpp">
-      <Filter>Source Files\GameEngine\Screens</Filter>
+      <Filter>Source Files\Screens</Filter>
     </ClCompile>
     <ClCompile Include="Orange.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="TitleScreen.cpp">
-      <Filter>Source Files\GameEngine\Screens</Filter>
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files\GameEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScreenManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Config.h">
+      <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
     <ClInclude Include="Textures.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
-    <ClInclude Include="Config.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ScreenManager.h">
+      <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleScreen.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
     <ClInclude Include="Orange.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

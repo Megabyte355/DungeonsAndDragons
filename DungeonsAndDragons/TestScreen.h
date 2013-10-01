@@ -2,12 +2,16 @@
 
 #include "Screen.h"
 #include <iostream>
+#include "Orange.h"
 
-class TitleScreen : public Screen
+class TestScreen : public Screen
 {
+private:
+    Orange o;
+
 public:
-    TitleScreen(void);
-    ~TitleScreen(void) override;
+    TestScreen(void);
+    ~TestScreen(void) override;
 
     void Instance();
     void Initialize() override;
@@ -15,4 +19,3 @@ public:
     void Draw() override;
     void HandleEvents(Game * game, SDL_Event * event) override;
 };
-

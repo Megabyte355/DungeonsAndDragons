@@ -4,6 +4,7 @@
 #include "Screen.h"
 
 #include "TitleScreen.h"
+#include "TestScreen.h"
 #include <SDL.h>
 
 class Game;
