@@ -103,9 +103,10 @@ void ScreenManager::HandleEvents(Game * game, SDL_Event * event)
     CleanCopiedScreens();
 }
 
-// Copy all screens in activeScreens to screensToProcess vector
+
 void ScreenManager::CopyActiveScreens()
 {
+    // Copy all screens in activeScreens to screensToProcess vector
     for (auto s : activeScreens)
     {
         screensToProcess.push_back(s);

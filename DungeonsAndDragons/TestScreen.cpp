@@ -27,12 +27,6 @@ void TestScreen::Update(float gameTime)
 
 void TestScreen::Draw(float interpolation) 
 {
-    //Textures::ApplySurface(Textures::GetTexture("orange"), 50, 50);
-
-    // Testing
-    //Textures::DrawTexture("orange", 150, 150);
-    //Textures::DrawTexture("orange", 250, 250, 350, 350);
-    //Textures::DrawTexture("orange", 400, 375, 200, 200);
     o.Draw(interpolation);
 }
 
@@ -41,10 +35,11 @@ void TestScreen::HandleEvents(Game * game, SDL_Event * event)
     switch(event->type)
     {
         case SDL_QUIT:
+            game->isRunning = false;
             break;
         case SDL_KEYDOWN:
 
-            std::cout << "Key pressed: " << event->key.keysym.sym << endl;
+            //std::cout << "Key pressed: " << event->key.keysym.sym << endl;
             if (event->key.keysym.sym == SDLK_ESCAPE)
             {
                 game->isRunning = false;
@@ -68,7 +63,7 @@ void TestScreen::HandleEvents(Game * game, SDL_Event * event)
             }
             break;
         case SDL_KEYUP:
-            std::cout << "Key released: " << event->key.keysym.sym << endl;
+            //std::cout << "Key released: " << event->key.keysym.sym << endl;
 
             switch (event->key.keysym.sym)
             {

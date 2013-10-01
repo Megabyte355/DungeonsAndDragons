@@ -63,29 +63,26 @@ void Orange::MoveRight(bool x)
 
 void Orange::Draw(float interpolation)
 {
-    Textures::DrawTexture("orange", x, y);
-
-    // Experiment
-    //if (up)
-    //{
-    //    Textures::DrawTexture("orange", x, y - y * interpolation);
-    //}
-    //else if (down)
-    //{
-    //    Textures::DrawTexture("orange", x, y + y * interpolation);
-    //}
-    //else if (left)
-    //{
-    //    Textures::DrawTexture("orange", x - x * interpolation, y);
-    //}
-    //else if (right)
-    //{
-    //    Textures::DrawTexture("orange", x + x * interpolation, y);
-    //}
-    //else
-    //{
-    //    Textures::DrawTexture("orange", x, y);
-    //}
+    if (up)
+    {
+        Textures::DrawTexture("orange", x, y - moveSpeed * interpolation);
+    }
+    else if (down)
+    {
+        Textures::DrawTexture("orange", x, y + moveSpeed * interpolation);
+    }
+    else if (left)
+    {
+        Textures::DrawTexture("orange", x - moveSpeed * interpolation, y);
+    }
+    else if (right)
+    {
+        Textures::DrawTexture("orange", x + moveSpeed * interpolation, y);
+    }
+    else
+    {
+        Textures::DrawTexture("orange", x, y);
+    }
 }
 
 void Orange::Update()

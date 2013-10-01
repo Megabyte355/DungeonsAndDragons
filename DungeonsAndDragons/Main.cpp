@@ -41,12 +41,14 @@ int main(int argc, char** argv)
             nextGameTick += GameConfig::SKIP_TICKS;
             loops++;
 
+            cout << "gameTime = " << gameTime << endl;
+        
             while(SDL_PollEvent(&event))
             {
                 g->HandleEvents(g, &event);
             }
         }
-        
+
         interpolation = float(SDL_GetTicks() + GameConfig::SKIP_TICKS - nextGameTick) / float(GameConfig::SKIP_TICKS);
         g->Draw(interpolation);
     }
