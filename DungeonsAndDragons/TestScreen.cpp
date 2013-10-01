@@ -20,12 +20,12 @@ void TestScreen::Initialize()
     // Reset everything
 }
 
-void TestScreen::Update() 
+void TestScreen::Update(float gameTime) 
 {
-
+    o.Move(gameTime);
 }
 
-void TestScreen::Draw() 
+void TestScreen::Draw(float interpolation) 
 {
     //Textures::ApplySurface(Textures::GetTexture("orange"), 50, 50);
 
@@ -33,7 +33,7 @@ void TestScreen::Draw()
     //Textures::DrawTexture("orange", 150, 150);
     //Textures::DrawTexture("orange", 250, 250, 350, 350);
     //Textures::DrawTexture("orange", 400, 375, 200, 200);
-    o.Draw();
+    o.Draw(interpolation);
 }
 
 void TestScreen::HandleEvents(Game * game, SDL_Event * event) 
@@ -52,16 +52,37 @@ void TestScreen::HandleEvents(Game * game, SDL_Event * event)
             switch (event->key.keysym.sym)
             {
                 case SDLK_UP:
-                    o.Move(0,-10);
+                    o.MoveUp(true);
                     break;
                 case SDLK_DOWN:
-                    o.Move(0,10);
+                    o.MoveDown(true);
                     break;
                 case SDLK_LEFT:
-                    o.Move(-10,0);
+                    o.MoveLeft(true);
                     break;
                 case SDLK_RIGHT:
-                    o.Move(10,0);
+                    o.MoveRight(true);
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case SDL_KEYUP:
+            std::cout << "Key released: " << event->key.keysym.sym << endl;
+
+            switch (event->key.keysym.sym)
+            {
+                case SDLK_UP:
+                    o.MoveUp(false);
+                    break;
+                case SDLK_DOWN:
+                    o.MoveDown(false);
+                    break;
+                case SDLK_LEFT:
+                    o.MoveLeft(false);
+                    break;
+                case SDLK_RIGHT:
+                    o.MoveRight(false);
                     break;
                 default:
                     break;

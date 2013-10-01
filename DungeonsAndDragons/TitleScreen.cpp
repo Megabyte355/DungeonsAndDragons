@@ -22,12 +22,12 @@ void TitleScreen::Initialize()
 
 }
 
-void TitleScreen::Update() 
+void TitleScreen::Update(float) 
 {
 
 }
 
-void TitleScreen::Draw() 
+void TitleScreen::Draw(float interpolation) 
 {
 
 }

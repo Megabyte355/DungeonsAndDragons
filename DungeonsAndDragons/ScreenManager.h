@@ -21,8 +21,8 @@ public:
     void PopScreen(Screen * s);
     void PopScreen(std::string s);
 
-    void Update();
-    void Draw();
+    void Update(float);
+    void Draw(float);
     void HandleEvents(Game * game, SDL_Event * event);
 
 private:

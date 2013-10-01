@@ -70,24 +70,24 @@ void ScreenManager::PopScreen(std::string s)
     }
 }
 
-void ScreenManager::Update()
+void ScreenManager::Update(float gameTime)
 {
     // For each screen in active screens, perform Update()
     CopyActiveScreens();
     for (auto s : screensToProcess)
     {
-        s->Update();
+        s->Update(gameTime);
     }
     CleanCopiedScreens();
 }
 
-void ScreenManager::Draw()
+void ScreenManager::Draw(float interpolation)
 {
     // For each screen in active screens, perform Draw()
     CopyActiveScreens();
     for (auto s : screensToProcess)
     {
-        s->Draw();
+        s->Draw(interpolation);
     }
     CleanCopiedScreens();
 }

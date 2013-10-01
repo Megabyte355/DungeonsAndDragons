@@ -59,15 +59,15 @@ void Game::Initialize()
     std::cout << "Game Started" << std::endl;
 }
 
-void Game::Update()
+void Game::Update(float gameTime)
 {
-    screenManager->Update();
+    screenManager->Update(gameTime);
 }
 
-void Game::Draw()
+void Game::Draw(float interpolation)
 {
     SDL_RenderClear(renderer);
-    screenManager->Draw();
+    screenManager->Draw(interpolation);
     SDL_RenderPresent(renderer);
 }
 
