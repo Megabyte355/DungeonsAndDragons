@@ -3,11 +3,20 @@
 
 TestScreen::TestScreen(void) : Screen("TestScreen")
 {   
+    int instances = rand() % 100 + 50;
+    for (int i = instances; i > 0; i--)
+    {
+        k.push_back(new Kiwi(rand() % 800, rand() % 600, (rand() % 500 + 1) / (float)1000 ));
+    }
 }
 
 
 TestScreen::~TestScreen(void)
 {
+    for (auto kiwi : k)
+    {
+        delete kiwi;
+    }
 }
 
 void TestScreen::Instance()
@@ -22,14 +31,20 @@ void TestScreen::Initialize()
 
 void TestScreen::Update(float gameTime) 
 {
-    k.Update(gameTime);
+    for (auto kiwi : k)
+    {
+        kiwi->Update(gameTime);
+    }
     o.Move(gameTime);
     
 }
 
 void TestScreen::Draw(float interpolation) 
 {
-    k.Draw(interpolation);
+    for (auto kiwi : k)
+    {
+        kiwi->Draw(interpolation);
+    }
     o.Draw(interpolation);
 }
 

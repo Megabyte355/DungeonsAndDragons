@@ -7,6 +7,7 @@ public:
     int down;
 
     Kiwi(void);
+    Kiwi(int,int,float);
     ~Kiwi(void);
 
     void Draw(float);

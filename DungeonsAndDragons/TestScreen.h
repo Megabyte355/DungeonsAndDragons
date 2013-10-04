@@ -2,6 +2,7 @@
 
 #include "Screen.h"
 #include <iostream>
+#include <vector>
 #include "Orange.h"
 #include "Kiwi.h"
 
@@ -9,8 +10,7 @@ class TestScreen : public Screen
 {
 private:
     Orange o;
-    Kiwi k;
-
+    std::vector<Kiwi*> k;
 
 public:
     TestScreen(void);

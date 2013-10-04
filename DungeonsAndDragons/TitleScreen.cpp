@@ -3,7 +3,6 @@
 
 TitleScreen::TitleScreen(void) : Screen("TitleScreen")
 {
-
 }
 
 
