@@ -60,6 +60,9 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files\GameEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Kiwi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="Utils.h">
       <Filter>Header Files\GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Kiwi.h">
+      <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

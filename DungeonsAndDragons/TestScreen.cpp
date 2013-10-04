@@ -22,11 +22,14 @@ void TestScreen::Initialize()
 
 void TestScreen::Update(float gameTime) 
 {
+    k.Update(gameTime);
     o.Move(gameTime);
+    
 }
 
 void TestScreen::Draw(float interpolation) 
 {
+    k.Draw(interpolation);
     o.Draw(interpolation);
 }
 

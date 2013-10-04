@@ -5,6 +5,7 @@ SDL_Renderer * Textures::renderer;
 // Texture test
 std::map<std::string, SDL_Texture*> Textures::textureMap;
 SDL_Texture * Textures::orange;
+SDL_Texture * Textures::kiwi;
 
 
 Textures::Textures(void)
@@ -24,7 +25,9 @@ void Textures::LoadAllTextures()
 {
     // Load all files here
     orange = LoadTexture("Assets\\orange.png");
+    kiwi = LoadTexture("Assets\\kiwi.png");
     textureMap["orange"] = orange;
+    textureMap["kiwi"] = kiwi;
 }
 
 SDL_Texture* Textures::GetTexture(std::string textureName)

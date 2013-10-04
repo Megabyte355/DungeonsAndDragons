@@ -3,11 +3,14 @@
 #include "Screen.h"
 #include <iostream>
 #include "Orange.h"
+#include "Kiwi.h"
 
 class TestScreen : public Screen
 {
 private:
     Orange o;
+    Kiwi k;
+
 
 public:
     TestScreen(void);

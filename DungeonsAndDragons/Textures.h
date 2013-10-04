@@ -20,9 +20,8 @@ public:
     static std::map<std::string, SDL_Texture*> textureMap;
     
     static SDL_Texture * orange;
+    static SDL_Texture * kiwi;
 
-
-    
     static SDL_Texture* GetTexture(std::string textureName);
     static SDL_Texture* RenderText(std::string message, std::string fontFile, SDL_Color color, int fontSize);
     
