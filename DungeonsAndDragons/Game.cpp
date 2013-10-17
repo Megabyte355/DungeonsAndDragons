@@ -2,7 +2,6 @@
 
 Game::Game(void)
 {
-
     screenManager = nullptr;
     renderer = nullptr;
     window = nullptr;
@@ -20,7 +19,7 @@ Game::~Game(void)
 
 	SDL_Quit();
 
-    std::cout << "Game Destroyed" << std::endl;   
+    std::cout << "Game Destroyed" << std::endl;
 }
 
 void Game::Initialize()
@@ -52,22 +51,20 @@ void Game::Initialize()
     screenManager = ScreenManager::GetInstance();
     screenManager->Initialize();
 
-    
-    //SDL_Delay(5000);
     isRunning = true;
 
     std::cout << "Game Started" << std::endl;
 }
 
-void Game::Update()
+void Game::Update(float gameTime)
 {
-    screenManager->Update();
+    screenManager->Update(gameTime);
 }
 
-void Game::Draw()
+void Game::Draw(float interpolation)
 {
     SDL_RenderClear(renderer);
-    screenManager->Draw();
+    screenManager->Draw(interpolation);
     SDL_RenderPresent(renderer);
 }
 
