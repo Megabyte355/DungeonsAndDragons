@@ -17,8 +17,8 @@ public:
     virtual string GetName();
     virtual void Instance() = 0;
     virtual void Initialize() = 0;
-    virtual void Update() = 0;
-    virtual void Draw() = 0;
+    virtual void Update(float) = 0;
+    virtual void Draw(float) = 0;
     virtual void HandleEvents(Game * game, SDL_Event * event) = 0;
 
 };

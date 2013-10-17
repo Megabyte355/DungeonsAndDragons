@@ -11,8 +11,8 @@ public:
 
     void Instance();
     void Initialize() override;
-    void Update() override;
-    void Draw() override;
+    void Update(float) override;
+    void Draw(float) override;
     void HandleEvents(Game * game, SDL_Event * event) override;
 };
 

@@ -101,6 +101,7 @@ erase "$(OutDir)*.dll"
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Kiwi.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Orange.cpp" />
     <ClCompile Include="Screen.cpp" />
@@ -113,6 +114,7 @@ erase "$(OutDir)*.dll"
   <ItemGroup>
     <ClInclude Include="Config.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Kiwi.h" />
     <ClInclude Include="Orange.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="ScreenManager.h" />

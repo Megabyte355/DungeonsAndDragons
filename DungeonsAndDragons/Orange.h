@@ -2,12 +2,24 @@
 class Orange
 {
 public:
+    bool up;
+    bool down;
+    bool left;
+    bool right;
+
+    float moveSpeed;
+
     Orange(void);
     ~Orange(void);
 
-    void Draw();
+    void Draw(float);
     void Update();
-    void Move(float x, float y);
+    void Move(float);
+
+    void MoveUp(bool);
+    void MoveDown(bool);
+    void MoveLeft(bool);
+    void MoveRight(bool);
 
 private:
     float x;

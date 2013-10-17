@@ -26,8 +26,8 @@ public:
     ~Game(void);
 
     void Initialize();
-    void Update();
-    void Draw();
+    void Update(float);
+    void Draw(float);
     void HandleEvents(Game * game, SDL_Event * event);
 };
 
