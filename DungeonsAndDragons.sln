@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DungeonsAndDragons", "DungeonsAndDragons\DungeonsAndDragons.vcxproj", "{BD0F6FD2-94FF-4876-B1B5-00C939ACA015}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapProject", "MapProject\MapProject.vcxproj", "{8837F2C0-9A58-4AD1-94BF-477C7DD863F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{BD0F6FD2-94FF-4876-B1B5-00C939ACA015}.Debug|Win32.Build.0 = Debug|Win32
 		{BD0F6FD2-94FF-4876-B1B5-00C939ACA015}.Release|Win32.ActiveCfg = Release|Win32
 		{BD0F6FD2-94FF-4876-B1B5-00C939ACA015}.Release|Win32.Build.0 = Release|Win32
+		{8837F2C0-9A58-4AD1-94BF-477C7DD863F3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8837F2C0-9A58-4AD1-94BF-477C7DD863F3}.Debug|Win32.Build.0 = Debug|Win32
+		{8837F2C0-9A58-4AD1-94BF-477C7DD863F3}.Release|Win32.ActiveCfg = Release|Win32
+		{8837F2C0-9A58-4AD1-94BF-477C7DD863F3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
